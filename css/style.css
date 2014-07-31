@@ -457,6 +457,12 @@ pre .deletion {
   position: relative;
   cursor: pointer;
 }
+#nav-twitter-link:before {
+  content: "\f099";
+}
+#nav-github-link:before {
+  content: "\f113";
+}
 #nav-rss-link:before {
   content: "\f09e";
 }
