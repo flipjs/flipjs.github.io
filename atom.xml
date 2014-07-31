@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Why isn't there ham in a hamburger?]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://flipjs.github.io/"/>
-  <updated>2014-07-31T03:35:02.162Z</updated>
+  <updated>2014-07-31T11:01:05.105Z</updated>
   <id>http://flipjs.github.io/</id>
   
   <author>
@@ -15,268 +15,47 @@
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[Seventh]]></title>
-    <link href="http://flipjs.github.io/2014/07/30/seventh/"/>
-    <id>http://flipjs.github.io/2014/07/30/seventh/</id>
-    <published>2014-07-29T23:00:00.000Z</published>
-    <updated>2014-07-31T01:34:21.000Z</updated>
-    <content type="html"><![CDATA[<p>Welcome to <a href="http://flipjs.io/" target="_blank" rel="external">flipjs.io</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">trobuleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2>
-<h3 id="Create_a_new_post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-
+    <title><![CDATA[Finally settled using Hexo]]></title>
+    <link href="http://flipjs.github.io/2014/07/29/finally-settled-using-hexo/"/>
+    <id>http://flipjs.github.io/2014/07/29/finally-settled-using-hexo/</id>
+    <published>2014-07-28T23:00:00.000Z</published>
+    <updated>2014-07-31T10:57:07.000Z</updated>
+    <content type="html"><![CDATA[<p>I have finally settled on using <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a> as my static site generator. I tried a few, such as Metalsmith, Docpad, Harp, Wintersmith, Assemble, etc., but Hexo is the best by far, for my needs.</p>
+<p>I didn’t like the default theme that came up with Hexo. Fortunately, there are loads of themes available on Github. What you see now is based on <a href="http://sanographix.github.io/tumblr/apollo/" target="_blank" rel="external">Apollo</a> theme, designed by <a href="http://www.sanographix.net/" target="_blank" rel="external">sanographix.net</a>.</p>
+<p>Next step is, to migrate my blog into Github. Haven’t checked yet how to do it in Hexo though. We’ll find out soon.</p>
 ]]></content>
     
     
-      <category term="jade" scheme="http://flipjs.github.io/tags/jade/"/>
+      <category term="hexo" scheme="http://flipjs.github.io/tags/hexo/"/>
     
   </entry>
   
   <entry>
-    <title><![CDATA[Switch statement]]></title>
-    <link href="http://flipjs.github.io/2014/07/28/switch-statement/"/>
-    <id>http://flipjs.github.io/2014/07/28/switch-statement/</id>
-    <published>2014-07-27T23:00:00.000Z</published>
-    <updated>2014-07-31T03:14:30.000Z</updated>
-    <content type="html"><![CDATA[<p>Welcome to <a href="http://flipjs.io/" target="_blank" rel="external">flipjs.io</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">trobuleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2>
-<h3 id="Create_a_new_post">Create a new post</h3>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> getShape = <span class="function"><span class="keyword">function</span> <span class="params">(shape)</span> </span>{</div><div class="line"></div><div class="line">  <span class="keyword">var</span> isSquare = <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'square'</span>)</div><div class="line">  }</div><div class="line"></div><div class="line">  <span class="keyword">var</span> isCircle = <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'circle'</span>)</div><div class="line">  }</div><div class="line"></div><div class="line">  <span class="keyword">var</span> isRectangle = <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'rectangle'</span>)</div><div class="line">  }</div><div class="line"></div><div class="line">  <span class="keyword">var</span> isDefault = <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'There is no shape like that.'</span>)</div><div class="line">  }</div><div class="line"></div><div class="line">  <span class="keyword">var</span> shapes = {</div><div class="line">    <span class="string">'circle'</span>: isCircle,</div><div class="line">    <span class="string">'square'</span>: isSquare,</div><div class="line">    <span class="string">'rectangle'</span>: isRectangle,</div><div class="line">    <span class="string">'default'</span>: isDefault</div><div class="line">  }</div><div class="line"></div><div class="line">  <span class="keyword">return</span> (shapes[shape] || shapes[<span class="string">'default'</span>])()</div><div class="line"></div><div class="line">}</div><div class="line"></div><div class="line">getShape(<span class="string">'circle'</span>)</div><div class="line">getShape(<span class="string">'square'</span>)</div><div class="line">getShape(<span class="string">'qwerty'</span>)</div></pre></td></tr></table></figure>
+    <title><![CDATA[Using object literal as switch statement]]></title>
+    <link href="http://flipjs.github.io/2014/07/18/using-object-literal-as-switch-statement/"/>
+    <id>http://flipjs.github.io/2014/07/18/using-object-literal-as-switch-statement/</id>
+    <published>2014-07-17T23:00:00.000Z</published>
+    <updated>2014-07-31T11:00:36.000Z</updated>
+    <content type="html"><![CDATA[<p>I came across an article from Todd Motto about <a href="http://toddmotto.com/deprecating-the-switch-statement-for-object-literals/" target="_blank" rel="external">Replacing switch statements with Object literals</a>. It has enlightened me to force myself not to use switch statement again (unless it’s absolutely necessary). Todd Motto showed a few examples, but what interested me is the fallthrough implementation. Here is an example:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> classifyShape = <span class="function"><span class="keyword">function</span><span class="params">(shape)</span> </span>{</div><div class="line"></div><div class="line">  <span class="keyword">var</span> isTriangle = <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{}</div><div class="line">  <span class="keyword">var</span> isQuadrangle = <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{}</div><div class="line">  <span class="keyword">var</span> isPentagon = <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{}</div><div class="line"></div><div class="line">  <span class="keyword">var</span> shapes = {</div><div class="line">    <span class="string">'isosceles'</span>: isTriangle,</div><div class="line">    <span class="string">'rectangle'</span>: isQuadrangle,</div><div class="line">    <span class="string">'square'</span>: isQuadrangle</div><div class="line">  }</div><div class="line"></div><div class="line">  <span class="keyword">return</span> shapes[shape]()</div><div class="line">}</div></pre></td></tr></table></figure>
+
+<p>What if wanted a default clause? Simple, add another clause, say ‘unknown: isUnknown’. But how would you call it if there is no case match? Good question! At first, I come up with this:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">return</span> shapes[shapes.hasOwnProperty(shape) ? shape : <span class="string">'unknown'</span>]()</div></pre></td></tr></table></figure>
+
+<p>But as Todd Motto pointed out, it involves extra function call, not to mention hasOwnProperty method has some issues. Then, I come up with this:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">return</span> shapes[shapes[shape] ? shape : <span class="string">'unknown'</span>]()</div></pre></td></tr></table></figure>
+
+<p>Just check the value, if its undefined, then call the default. Simpler. But why use ternary operator, when you can use short-circuit evaluation.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">return</span> (shapes[shape] || shapes[<span class="string">'unknown'</span>])()</div></pre></td></tr></table></figure>
+
+<p>Much simpler!</p>
+<p>Here is the final code:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> classifyShape = <span class="function"><span class="keyword">function</span><span class="params">(shape)</span> </span>{</div><div class="line">  </div><div class="line">  <span class="keyword">var</span> isTriangle = <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'A triangle is a polygon with 3 sides.'</span>)</div><div class="line">  }</div><div class="line"></div><div class="line">  <span class="keyword">var</span> isQuadrangle = <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'A quadrangle is a polygon with 4 sides.'</span>)</div><div class="line">  }</div><div class="line"></div><div class="line">  <span class="keyword">var</span> isPentagon = <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'A pentagon is a polygon with 5 sides.'</span>)</div><div class="line">  }</div><div class="line"></div><div class="line">  <span class="keyword">var</span> isUnknown = <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'Unknown shape.'</span>)</div><div class="line">  }</div><div class="line">  </div><div class="line">  <span class="keyword">var</span> shapes = {</div><div class="line">    <span class="string">'isosceles'</span>: isTriangle,</div><div class="line">    <span class="string">'rectangle'</span>: isQuadrangle,</div><div class="line">    <span class="string">'square'</span>: isQuadrangle,</div><div class="line">    <span class="string">'unknown'</span>: isUnknown</div><div class="line">  }</div><div class="line">  </div><div class="line">  <span class="keyword">return</span> (shapes[shape] || shapes[<span class="string">'unknown'</span>])()</div><div class="line">  </div><div class="line">}</div><div class="line">  </div><div class="line">classifyShape(<span class="string">'square'</span>)</div><div class="line">classifyShape(<span class="string">'isosceles'</span>)</div><div class="line">classifyShape(<span class="string">'qwerty'</span>)</div></pre></td></tr></table></figure>
 
 ]]></content>
     
     
       <category term="javascript" scheme="http://flipjs.github.io/tags/javascript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Hello World!]]></title>
-    <link href="http://flipjs.github.io/2014/07/22/hello-world/"/>
-    <id>http://flipjs.github.io/2014/07/22/hello-world/</id>
-    <published>2014-07-21T23:00:00.000Z</published>
-    <updated>2014-07-31T01:33:30.000Z</updated>
-    <content type="html"><![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">trobuleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2>
-<h3 id="Create_a_new_post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-
-]]></content>
-    
-    
-      <category term="life" scheme="http://flipjs.github.io/tags/life/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Eight]]></title>
-    <link href="http://flipjs.github.io/2014/07/12/eight/"/>
-    <id>http://flipjs.github.io/2014/07/12/eight/</id>
-    <published>2014-07-11T23:00:00.000Z</published>
-    <updated>2014-07-31T01:33:44.000Z</updated>
-    <content type="html"><![CDATA[<p>Welcome to <a href="http://flipjs.io/" target="_blank" rel="external">flipjs.io</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">trobuleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2>
-<h3 id="Create_a_new_post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-
-]]></content>
-    
-    
-      <category term="javascript" scheme="http://flipjs.github.io/tags/javascript/"/>
-    
-      <category term="ruby" scheme="http://flipjs.github.io/tags/ruby/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[IIFE]]></title>
-    <link href="http://flipjs.github.io/2014/07/09/iife/"/>
-    <id>http://flipjs.github.io/2014/07/09/iife/</id>
-    <published>2014-07-08T23:00:00.000Z</published>
-    <updated>2014-07-31T01:34:07.000Z</updated>
-    <content type="html"><![CDATA[<p>Welcome to <a href="http://flipjs.io/" target="_blank" rel="external">flipjs.io</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">trobuleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2>
-<h3 id="Create_a_new_post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-
-]]></content>
-    
-    
-      <category term="angular" scheme="http://flipjs.github.io/tags/angular/"/>
-    
-      <category term="javascript" scheme="http://flipjs.github.io/tags/javascript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[My third post]]></title>
-    <link href="http://flipjs.github.io/2014/06/18/third-post/"/>
-    <id>http://flipjs.github.io/2014/06/18/third-post/</id>
-    <published>2014-06-17T23:00:00.000Z</published>
-    <updated>2014-07-31T01:34:34.000Z</updated>
-    <content type="html"><![CDATA[<p>Welcome to <a href="http://flipjs.io/" target="_blank" rel="external">flipjs.io</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">trobuleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2>
-<h3 id="Create_a_new_post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-
-]]></content>
-    
-    
-      <category term="angular" scheme="http://flipjs.github.io/tags/angular/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Tenth]]></title>
-    <link href="http://flipjs.github.io/2014/04/27/tenth/"/>
-    <id>http://flipjs.github.io/2014/04/27/tenth/</id>
-    <published>2014-04-26T23:00:00.000Z</published>
-    <updated>2014-07-31T01:34:30.000Z</updated>
-    <content type="html"><![CDATA[<p>Welcome to <a href="http://flipjs.io/" target="_blank" rel="external">flipjs.io</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">trobuleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2>
-<h3 id="Create_a_new_post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-
-]]></content>
-    
-    
-      <category term="html" scheme="http://flipjs.github.io/tags/html/"/>
-    
-      <category term="css" scheme="http://flipjs.github.io/tags/css/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[My second post]]></title>
-    <link href="http://flipjs.github.io/2014/03/03/second-post/"/>
-    <id>http://flipjs.github.io/2014/03/03/second-post/</id>
-    <published>2014-03-03T00:00:00.000Z</published>
-    <updated>2014-07-31T01:34:17.000Z</updated>
-    <content type="html"><![CDATA[<p>Welcome to <a href="http://flipjs.io/" target="_blank" rel="external">flipjs.io</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">trobuleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2>
-<h3 id="Create_a_new_post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-
-]]></content>
-    
-    
-      <category term="javascript" scheme="http://flipjs.github.io/tags/javascript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Fifth]]></title>
-    <link href="http://flipjs.github.io/2014/02/21/fifth/"/>
-    <id>http://flipjs.github.io/2014/02/21/fifth/</id>
-    <published>2014-02-21T00:00:00.000Z</published>
-    <updated>2014-07-31T01:33:49.000Z</updated>
-    <content type="html"><![CDATA[<p>Welcome to <a href="http://flipjs.io/" target="_blank" rel="external">flipjs.io</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">trobuleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2>
-<h3 id="Create_a_new_post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-
-]]></content>
-    
-    
-      <category term="angular" scheme="http://flipjs.github.io/tags/angular/"/>
-    
-      <category term="javascript" scheme="http://flipjs.github.io/tags/javascript/"/>
-    
-      <category term="grunt" scheme="http://flipjs.github.io/tags/grunt/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Sixth]]></title>
-    <link href="http://flipjs.github.io/2014/01/07/sixth/"/>
-    <id>http://flipjs.github.io/2014/01/07/sixth/</id>
-    <published>2014-01-07T00:00:00.000Z</published>
-    <updated>2014-07-31T01:34:24.000Z</updated>
-    <content type="html"><![CDATA[<p>Welcome to <a href="http://flipjs.io/" target="_blank" rel="external">flipjs.io</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">trobuleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2>
-<h3 id="Create_a_new_post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-
-]]></content>
-    
-    
-      <category term="coffeescript" scheme="http://flipjs.github.io/tags/coffeescript/"/>
-    
-      <category term="javascript" scheme="http://flipjs.github.io/tags/javascript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Fourth]]></title>
-    <link href="http://flipjs.github.io/2013/12/23/fourth/"/>
-    <id>http://flipjs.github.io/2013/12/23/fourth/</id>
-    <published>2013-12-23T00:00:00.000Z</published>
-    <updated>2014-07-31T01:33:57.000Z</updated>
-    <content type="html"><![CDATA[<p>Welcome to <a href="http://flipjs.io/" target="_blank" rel="external">flipjs.io</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">trobuleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2>
-<h3 id="Create_a_new_post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-
-]]></content>
-    
-    
-      <category term="angular" scheme="http://flipjs.github.io/tags/angular/"/>
-    
-      <category term="javascript" scheme="http://flipjs.github.io/tags/javascript/"/>
-    
-      <category term="nodejs" scheme="http://flipjs.github.io/tags/nodejs/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[My first post]]></title>
-    <link href="http://flipjs.github.io/2013/12/20/first-post/"/>
-    <id>http://flipjs.github.io/2013/12/20/first-post/</id>
-    <published>2013-12-20T00:00:00.000Z</published>
-    <updated>2014-07-31T01:33:54.000Z</updated>
-    <content type="html"><![CDATA[<p>Welcome to <a href="http://flipjs.io/" target="_blank" rel="external">flipjs.io</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">trobuleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2>
-<h3 id="Create_a_new_post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-
-]]></content>
-    
-    
-      <category term="angular" scheme="http://flipjs.github.io/tags/angular/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Ninth]]></title>
-    <link href="http://flipjs.github.io/2013/09/07/ninth/"/>
-    <id>http://flipjs.github.io/2013/09/07/ninth/</id>
-    <published>2013-09-06T23:00:00.000Z</published>
-    <updated>2014-07-31T01:34:13.000Z</updated>
-    <content type="html"><![CDATA[<p>Welcome to <a href="http://flipjs.io/" target="_blank" rel="external">flipjs.io</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">trobuleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2>
-<h3 id="Create_a_new_post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-
-]]></content>
-    
-    
-      <category term="jade" scheme="http://flipjs.github.io/tags/jade/"/>
-    
-      <category term="handlebars" scheme="http://flipjs.github.io/tags/handlebars/"/>
-    
-      <category term="ejs" scheme="http://flipjs.github.io/tags/ejs/"/>
     
   </entry>
   
