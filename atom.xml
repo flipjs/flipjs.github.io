@@ -3,9 +3,9 @@
   <title><![CDATA[flipjs.io]]></title>
   <subtitle><![CDATA[Why isn't there ham in a hamburger?]]></subtitle>
   <link href="/atom.xml" rel="self"/>
-  <link href="http://flipjs.github.io/"/>
-  <updated>2014-07-31T23:52:59.777Z</updated>
-  <id>http://flipjs.github.io/</id>
+  <link href="http://flipjs.io/"/>
+  <updated>2014-08-01T00:03:59.187Z</updated>
+  <id>http://flipjs.io/</id>
   
   <author>
     <name><![CDATA[Felipe Apostol]]></name>
@@ -16,8 +16,8 @@
   
   <entry>
     <title><![CDATA[Finally settled using Hexo]]></title>
-    <link href="http://flipjs.github.io/2014/07/29/finally-settled-using-hexo/"/>
-    <id>http://flipjs.github.io/2014/07/29/finally-settled-using-hexo/</id>
+    <link href="http://flipjs.io/2014/07/29/finally-settled-using-hexo/"/>
+    <id>http://flipjs.io/2014/07/29/finally-settled-using-hexo/</id>
     <published>2014-07-28T23:00:00.000Z</published>
     <updated>2014-07-31T11:16:00.000Z</updated>
     <content type="html"><![CDATA[<p>I have finally settled on using <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a> as my static site generator. I tried a few, such as Metalsmith, Docpad, Harp, Wintersmith, Assemble, etc., but Hexo is the best by far, for my needs. Plus, it uses <a href="https://disqus.com/" target="_blank" rel="external">Disqus</a> as default external commenting sytem. Just supply your Disqus username, and that’s it, your site has now commenting system!</p>
@@ -26,14 +26,14 @@
 ]]></content>
     
     
-      <category term="hexo" scheme="http://flipjs.github.io/tags/hexo/"/>
+      <category term="hexo" scheme="http://flipjs.io/tags/hexo/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Using object literal as switch statement]]></title>
-    <link href="http://flipjs.github.io/2014/07/18/using-object-literal-as-switch-statement/"/>
-    <id>http://flipjs.github.io/2014/07/18/using-object-literal-as-switch-statement/</id>
+    <link href="http://flipjs.io/2014/07/18/using-object-literal-as-switch-statement/"/>
+    <id>http://flipjs.io/2014/07/18/using-object-literal-as-switch-statement/</id>
     <published>2014-07-17T23:00:00.000Z</published>
     <updated>2014-07-31T12:08:26.000Z</updated>
     <content type="html"><![CDATA[<p>I came across an article from Todd Motto about <a href="http://toddmotto.com/deprecating-the-switch-statement-for-object-literals/" target="_blank" rel="external">Replacing switch statements with Object literals</a>. It has enlightened me to force myself not to use switch statement again (unless it’s absolutely necessary). Todd Motto showed a few examples, but what interested me is the fallthrough implementation. Here is an example:</p>
@@ -55,7 +55,7 @@
 ]]></content>
     
     
-      <category term="javascript" scheme="http://flipjs.github.io/tags/javascript/"/>
+      <category term="javascript" scheme="http://flipjs.io/tags/javascript/"/>
     
   </entry>
   
