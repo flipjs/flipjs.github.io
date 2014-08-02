@@ -58,6 +58,70 @@
     <div id="main">
       
   
+    <article id="post-sublime-text-build-system-for-javascript" class="post">
+	<footer class="entry-meta-header">
+		<span class="meta-elements date">
+			<a href="/2014/08/02/sublime-text-build-system-for-javascript/" class="article-date">
+  <time datetime="2014-08-01T23:00:00.000Z" itemprop="datePublished">2 Aug 2014</time>
+</a>
+		</span>
+		<span class="meta-elements author">Felipe Apostol</span>
+		<div class="commentscount">
+			
+				<a href="http://flipjs.io/2014/08/02/sublime-text-build-system-for-javascript/#disqus_thread" class="article-comment-link">Comments</a>
+			
+		</div>
+	</footer>
+	
+	<header class="entry-header">
+		
+  
+    <h1 itemprop="name" class="entry-title">
+      <a class="article-title" href="/2014/08/02/sublime-text-build-system-for-javascript/">Sublime Text Build System for Javascript</a>
+    </h1>
+  
+
+	</header>
+	<div class="entry-content">
+		
+    	<p>Today, my daughter kicked me out of my desk because she wants to use my macbook pro. She is contented with just using the iPad, but today, she wants to play an online game with her sister and friends. She has a desktop computer, but it is broken for quite some time now. As for me, it’s time to use my old, trusty macbook again.</p>
+<p>Alas! I didn’t have sublime text installed in my old macbook. I was a textmate user before, so that was the text editor installed on it. Nothing to worry, just download sublime text (ST2 was used here), and install some packages.</p>
+<p>I downloaded NodeJS package too, and use it as build system for JavaScript. Problem is, it displays nothing when I run build. I remember I had the same issues before, but for the life of me, I can’t remember how I solved it.</p>
+<p>Well, Google is your friend. :) I decided to just create a new build system, and leave the NodeJS package alone. From the Sublime Text menu, select Tools -&gt; Build System —&gt; New Build System:</p>
+<p><img src="st-new-build-system.png" alt="png image file"></p>
+<p>Then, copy and paste this code:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">{</div><div class="line">  "<span class="attribute">cmd</span>": <span class="value">[<span class="string">"node"</span>, <span class="string">"$file"</span>]</span>,</div><div class="line">  "<span class="attribute">selector</span>": <span class="value"><span class="string">"source.js"</span></span></div><div class="line">}</div></pre></td></tr></table></figure>
+
+<p>And then, save it as, say “Node.sublime-build”. There is a problem though, when I execute Sublime Text from the dock or finder, it can’t find node. It could be the environment variable $PATH does not exist in finder shell or the path to node is not defined. Well, not to worry, it is an easy fix. Just prepend ‘node’ with ‘/usr/local/bin’ (or whereever it was installed) in sublime-build file:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">{</div><div class="line">  "<span class="attribute">cmd</span>": <span class="value">[<span class="string">"/usr/local/bin/node"</span>, <span class="string">"$file"</span>]</span>,</div><div class="line">  "<span class="attribute">selector</span>": <span class="value"><span class="string">"source.js"</span></span></div><div class="line">}</div></pre></td></tr></table></figure>
+
+<p>`</p>
+<p>And, that’s it!</p>
+<p>As for my daughter, I should fix her computer soon. Otherwise, she will always bug me, whenever she wants to play that game again. Ok, Evernote, add it on my todo list!</p>
+
+    
+	</div>
+	<footer class="entry-footer">
+		<div class="entry-meta-footer">
+			<span class="category">
+				
+			</span>
+			<span class="tags">
+				
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sublime/">sublime</a></li></ul>
+
+			</span>
+		</div>
+	</footer>
+	
+</article>
+
+
+	<hr class="article-devider">
+
+
+
+  
     <article id="post-finally-settled-using-hexo" class="post">
 	<footer class="entry-meta-header">
 		<span class="meta-elements date">
