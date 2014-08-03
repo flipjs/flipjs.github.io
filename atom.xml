@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Why isn't there ham in a hamburger?]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://flipjs.io/"/>
-  <updated>2014-08-03T00:03:09.151Z</updated>
+  <updated>2014-08-03T02:12:42.790Z</updated>
   <id>http://flipjs.io/</id>
   
   <author>
@@ -13,6 +13,30 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Playing with O.o()]]></title>
+    <link href="http://flipjs.io/2014/08/03/playing-with-object-observe/"/>
+    <id>http://flipjs.io/2014/08/03/playing-with-object-observe/</id>
+    <published>2014-08-02T23:00:00.000Z</published>
+    <updated>2014-08-03T02:09:45.000Z</updated>
+    <content type="html"><![CDATA[<p>There is a new kid on the block that’s going to change how you write data-binding in JavaScript. It is called Object.observe(). As Addy Osmani was saying, “A revolution is coming.”</p>
+<p>Unfortunately, you cannot use it yet on most browsers, if not all. I tried Safari and Firefox, it didn’t work. Even node.js has not implemented it yet. But, you can already play with it using Google Chrome.</p>
+<p>Here’s the code I come up with:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> myObject = { name : <span class="string">'flipjs'</span> }</div><div class="line"> </div><div class="line"><span class="built_in">console</span>.log(<span class="string">'Start observing...'</span>)</div><div class="line"> </div><div class="line"><span class="built_in">Object</span>.observe(myObject, <span class="function"><span class="keyword">function</span><span class="params">(changes)</span> </span>{</div><div class="line">  changes.forEach(<span class="function"><span class="keyword">function</span><span class="params">(change)</span> </span>{</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'[TYPE: '</span></div><div class="line">              + change.type</div><div class="line">              + <span class="string">'] [PROPERTY: '</span></div><div class="line">              + change.name</div><div class="line">              + <span class="string">'] [NEW VALUE: '</span></div><div class="line">              + change.object[change.name]</div><div class="line">              + <span class="string">']'</span>)</div><div class="line">  })</div><div class="line">})</div><div class="line"> </div><div class="line"><span class="built_in">console</span>.log(myObject)</div><div class="line"> </div><div class="line">setTimeout(<span class="function"><span class="keyword">function</span><span class="params">()</span></span>{ myObject.name = <span class="string">'john doe'</span> }, <span class="number">1000</span>)</div><div class="line"> </div><div class="line">setTimeout(<span class="function"><span class="keyword">function</span><span class="params">()</span></span>{ myObject.name = <span class="string">'foo bar'</span> }, <span class="number">1000</span>)</div><div class="line"> </div><div class="line">setTimeout(<span class="function"><span class="keyword">function</span><span class="params">()</span></span>{ myObject.age = <span class="number">32</span> }, <span class="number">1000</span>)</div><div class="line"> </div><div class="line">setTimeout(<span class="function"><span class="keyword">function</span><span class="params">()</span></span>{ myObject.age = <span class="number">24</span> }, <span class="number">1000</span>)</div><div class="line"> </div><div class="line">setTimeout(<span class="function"><span class="keyword">function</span><span class="params">()</span></span>{ <span class="keyword">delete</span> myObject.name }, <span class="number">1000</span>)</div><div class="line"> </div><div class="line">setTimeout(<span class="function"><span class="keyword">function</span><span class="params">()</span></span>{ <span class="built_in">console</span>.log(myObject) }, <span class="number">1000</span>)</div><div class="line"> </div><div class="line"><span class="built_in">console</span>.log(<span class="string">'End program.'</span>)</div></pre></td></tr></table></figure>
+
+<p>Its pretty simple, actually. You just pass the object to watch, and a listener (callback), which will be called when a change has occured. In the listener, you iterate through each change, in my example, using forEach. You can check what changes has been made by inspecting the type property. It could be a property has been added, updated or deleted.</p>
+<p>Here’s the result:</p>
+<p><img src="observe.png" alt="console"></p>
+<p>As you can see, the code block has finished already (‘End program text’), but the listener has stayed in memory, and async callback will be triggered when there is a change in the object being watched.</p>
+<p>I’m only scratching the surface here. Since you are passing a callback, there are lots of things you can do when an object has changed. I’m just showing here what’s happening when an object has changed.</p>
+<p>I will touch more on this in the future posts at some point.</p>
+]]></content>
+    
+    
+      <category term="javascript" scheme="http://flipjs.io/tags/javascript/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Sublime Text Build System for JavaScript]]></title>
