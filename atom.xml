@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Why isn't there ham in a hamburger?]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://flipjs.io/"/>
-  <updated>2014-08-03T11:30:49.968Z</updated>
+  <updated>2014-08-03T11:37:26.590Z</updated>
   <id>http://flipjs.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://flipjs.io/2014/08/03/playing-with-object-observe/"/>
     <id>http://flipjs.io/2014/08/03/playing-with-object-observe/</id>
     <published>2014-08-02T23:00:00.000Z</published>
-    <updated>2014-08-03T11:30:18.000Z</updated>
+    <updated>2014-08-03T11:37:20.000Z</updated>
     <content type="html"><![CDATA[<p>There is a new kid on the block that’s going to change how you write data-binding in JavaScript. It is called Object.observe(). As Addy Osmani was saying, “A revolution is coming.”</p>
 <p>Unfortunately, you cannot use it yet on most browsers, if not all. I tried Safari and Firefox, it didn’t work. Even node.js has not implemented it yet. But, you can already play with it using Google Chrome.</p>
 <p>Here’s the code I was playing with:</p>
@@ -29,8 +29,8 @@
 <p>Here’s the result:</p>
 <p><img src="observe.png" alt="console"></p>
 <p>As you can see, the code block has finished already (‘End program text’), but the listener has stayed in memory, and async callback will be triggered when there is a change in the object being watched.</p>
-<p>I’m only scratching the surface here. Actually, the code above does nothing, but that’s how you start when you want to listen to an object mutations. There are lots of things you can do with Object.observe(). There is also Object.unobserve(), which I haven’t tried it yet. Now go, and play with O.o(). :)</p>
-<p>I need to go to sleep. My head hurts so badly. I will touch more on this in future posts at some point.</p>
+<p>I’m only scratching the surface here. The code above does nothing, but that’s how you start when you want to listen to an object mutations. There are lots of things you can do with Object.observe(). There is also Object.unobserve() actually, which unregisters your listener. Go, and play with O.o(). :)</p>
+<p>I need to go to sleep now. My head hurts so badly. I will touch more on this in future posts at some point.</p>
 ]]></content>
     
     
