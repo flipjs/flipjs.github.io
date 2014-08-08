@@ -58,17 +58,17 @@
     <div id="main">
       
   
-    <article id="post-extract-photos-from-google-plus" class="post">
+    <article id="post-more-on-extracting-google-plus-photos" class="post">
 	<footer class="entry-meta-header">
 		<span class="meta-elements date">
-			<a href="/2014/08/08/extract-photos-from-google-plus/" class="article-date">
-  <time datetime="2014-08-08T01:38:42.000Z" itemprop="datePublished">8 Aug 2014</time>
+			<a href="/2014/08/08/more-on-extracting-google-plus-photos/" class="article-date">
+  <time datetime="2014-08-08T10:34:08.000Z" itemprop="datePublished">8 Aug 2014</time>
 </a>
 		</span>
 		<span class="meta-elements author">Felipe Apostol</span>
 		<div class="commentscount">
 			
-				<a href="http://flipjs.io/2014/08/08/extract-photos-from-google-plus/#disqus_thread" class="article-comment-link">Comments</a>
+				<a href="http://flipjs.io/2014/08/08/more-on-extracting-google-plus-photos/#disqus_thread" class="article-comment-link">Comments</a>
 			
 		</div>
 	</footer>
@@ -77,7 +77,62 @@
 		
   
     <h1 itemprop="name" class="entry-title">
-      <a class="article-title" href="/2014/08/08/extract-photos-from-google-plus/">Extract photos from Google+</a>
+      <a class="article-title" href="/2014/08/08/more-on-extracting-google-plus-photos/">More on Extracting Google+ Photos</a>
+    </h1>
+  
+
+	</header>
+	<div class="entry-content">
+		
+    	<p>This is a follow-up on my recent post called <a href="/2014/08/07/extract-photos-from-google-plus/">Extract photos from Google Plus</a>. A close friend of mine, Ronneil at <a href="http://c0debreaker.github.io/" target="_blank" rel="external">http://c0debreaker.github.io/</a>, suggested that we can also use an external module called <a href="https://github.com/mikeal/request" target="_blank" rel="external">‘request’</a>, instead of the native module http. It is much simpler to use to make http calls. See the code below:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> request = <span class="built_in">require</span>(<span class="string">'request'</span>)</div><div class="line"> </div><div class="line"><span class="keyword">var</span> url = <span class="string">'http://picasaweb.google.com'</span></div><div class="line">        + <span class="string">'/data/feed/api/user/102873175118305865375/'</span></div><div class="line">        + <span class="string">'albumid/5646665615382099025'</span></div><div class="line">        + <span class="string">'?alt=json'</span></div><div class="line"> </div><div class="line">request.get(url, <span class="function"><span class="keyword">function</span> <span class="params">(err, res, body)</span> </span>{</div><div class="line">    <span class="keyword">var</span> gplus = <span class="built_in">JSON</span>.parse(body)</div><div class="line">    <span class="keyword">var</span> len = gplus.feed.entry.length</div><div class="line">    ;(<span class="function"><span class="keyword">function</span> <span class="title">iterator</span><span class="params">(i)</span> </span>{</div><div class="line">      <span class="keyword">if</span> (i &gt;= len) <span class="keyword">return</span></div><div class="line">      <span class="built_in">console</span>.log(<span class="string">''</span> + (i+<span class="number">1</span>) + <span class="string">'. '</span></div><div class="line">                + gplus.feed.entry[i].content.src</div><div class="line">                + <span class="string">' - '</span> + gplus.feed.entry[i].summary[<span class="string">'$t'</span>])</div><div class="line">      iterator(i + <span class="number">1</span>)</div><div class="line">    })(<span class="number">0</span>)</div><div class="line">})</div></pre></td></tr></table></figure>
+
+<p>See, it is much less code. The request module is doing all the work for you.</p>
+<p>If you notice, I’m using iterator iife/recursion for looping. I will post another topic on that, as I need to do something else now. So, stay tuned! </p>
+
+    
+	</div>
+	<footer class="entry-footer">
+		<div class="entry-meta-footer">
+			<span class="category">
+				
+			</span>
+			<span class="tags">
+				
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gplus/">gplus</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li></ul>
+
+			</span>
+		</div>
+	</footer>
+	
+</article>
+
+
+	<hr class="article-devider">
+
+
+
+  
+    <article id="post-extract-photos-from-google-plus" class="post">
+	<footer class="entry-meta-header">
+		<span class="meta-elements date">
+			<a href="/2014/08/07/extract-photos-from-google-plus/" class="article-date">
+  <time datetime="2014-08-07T22:38:42.000Z" itemprop="datePublished">7 Aug 2014</time>
+</a>
+		</span>
+		<span class="meta-elements author">Felipe Apostol</span>
+		<div class="commentscount">
+			
+				<a href="http://flipjs.io/2014/08/07/extract-photos-from-google-plus/#disqus_thread" class="article-comment-link">Comments</a>
+			
+		</div>
+	</footer>
+	
+	<header class="entry-header">
+		
+  
+    <h1 itemprop="name" class="entry-title">
+      <a class="article-title" href="/2014/08/07/extract-photos-from-google-plus/">Extract photos from Google+</a>
     </h1>
   
 
@@ -225,59 +280,6 @@
 			<span class="tags">
 				
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sublime/">sublime</a></li></ul>
-
-			</span>
-		</div>
-	</footer>
-	
-</article>
-
-
-	<hr class="article-devider">
-
-
-
-  
-    <article id="post-finally-settled-using-hexo" class="post">
-	<footer class="entry-meta-header">
-		<span class="meta-elements date">
-			<a href="/2014/07/29/finally-settled-using-hexo/" class="article-date">
-  <time datetime="2014-07-28T23:00:00.000Z" itemprop="datePublished">29 Jul 2014</time>
-</a>
-		</span>
-		<span class="meta-elements author">Felipe Apostol</span>
-		<div class="commentscount">
-			
-				<a href="http://flipjs.io/2014/07/29/finally-settled-using-hexo/#disqus_thread" class="article-comment-link">Comments</a>
-			
-		</div>
-	</footer>
-	
-	<header class="entry-header">
-		
-  
-    <h1 itemprop="name" class="entry-title">
-      <a class="article-title" href="/2014/07/29/finally-settled-using-hexo/">Finally settled using Hexo</a>
-    </h1>
-  
-
-	</header>
-	<div class="entry-content">
-		
-    	<p>I have finally settled on using <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a> as my static site generator. I tried a few, such as Metalsmith, Docpad, Harp, Wintersmith, Assemble, etc., but Hexo is the best by far, for my needs. Plus, it uses <a href="https://disqus.com/" target="_blank" rel="external">Disqus</a> as default external commenting sytem. Just supply your Disqus username, and that’s it, your site has now commenting system!</p>
-<p>I didn’t like the default theme that came up with Hexo. Fortunately, there are loads of themes available on Github. What you see now is based on <a href="http://sanographix.github.io/tumblr/apollo/" target="_blank" rel="external">Apollo</a> theme, designed by <a href="http://www.sanographix.net/" target="_blank" rel="external">sanographix.net</a>.</p>
-<p>Next step is, to migrate my blog into Github. Haven’t checked yet how to do it in Hexo though. We’ll find out soon.</p>
-
-    
-	</div>
-	<footer class="entry-footer">
-		<div class="entry-meta-footer">
-			<span class="category">
-				
-			</span>
-			<span class="tags">
-				
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
 
 			</span>
 		</div>

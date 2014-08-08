@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>More on Extracting Google+ Photos | flipjs.io</title>
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="This is a follow-up on my recent post called Extract photos from Google Plus. A close friend of mine, Ronneil at http://c0debreaker.github.io/, suggested that we can also use an external module called">
+<meta property="og:type" content="article">
+<meta property="og:title" content="More on Extracting Google+ Photos">
+<meta property="og:url" content="http://flipjs.io/2014/08/08/more-on-extracting-google-plus-photos/">
+<meta property="og:site_name" content="flipjs.io">
+<meta property="og:description" content="This is a follow-up on my recent post called Extract photos from Google Plus. A close friend of mine, Ronneil at http://c0debreaker.github.io/, suggested that we can also use an external module called">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="More on Extracting Google+ Photos">
+<meta name="twitter:description" content="This is a follow-up on my recent post called Extract photos from Google Plus. A close friend of mine, Ronneil at http://c0debreaker.github.io/, suggested that we can also use an external module called">
+
+  
+    <link rel="alternative" href="/atom.xml" title="flipjs.io" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div class="mobile-nav-panel">
+	<i class="icon-reorder icon-large"></i>
+</div>
+<header id="header">
+	<h1 class="blog-title">
+		<a href="/">flipjs.io</a>
+	</h1>
+	<nav class="nav">
+		<ul>
+
+			<li><a href="https://twitter.com/flipjsio" id="nav-twitter-link" class="nav-icon" title="Twitter"></a></li>
+
+			<li><a href="https://github.com/flipjs" id="nav-github-link" class="nav-icon" title="Github"></a></li>
+
+			
+
+			<li><a href="/atom.xml" id="nav-rss-link" class="nav-icon" title="RSS Feed"></a></li>
+
+			<li><a id="nav-search-btn" class="nav-icon" title="Search"></a></li>
+
+		</ul>
+	</nav>
+	<div id="search-form-wrap">
+		<form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><input type="submit" value="&#xF002;" class="search-form-submit"><input type="hidden" name="q" value="site:http://flipjs.io"></form>
+	</div>
+</header>
+
+    <div id="main">
+      <article id="post-more-on-extracting-google-plus-photos" class="post">
+	<footer class="entry-meta-header">
+		<span class="meta-elements date">
+			<a href="/2014/08/08/more-on-extracting-google-plus-photos/" class="article-date">
+  <time datetime="2014-08-08T10:34:08.000Z" itemprop="datePublished">8 Aug 2014</time>
+</a>
+		</span>
+		<span class="meta-elements author">Felipe Apostol</span>
+		<div class="commentscount">
+			
+				<a href="http://flipjs.io/2014/08/08/more-on-extracting-google-plus-photos/#disqus_thread" class="article-comment-link">Comments</a>
+			
+		</div>
+	</footer>
+	
+	<header class="entry-header">
+		
+  
+    <h1 class="article-title entry-title" itemprop="name">
+      More on Extracting Google+ Photos
+    </h1>
+  
+
+	</header>
+	<div class="entry-content">
+		
+    	<p>This is a follow-up on my recent post called <a href="/2014/08/07/extract-photos-from-google-plus/">Extract photos from Google Plus</a>. A close friend of mine, Ronneil at <a href="http://c0debreaker.github.io/" target="_blank" rel="external">http://c0debreaker.github.io/</a>, suggested that we can also use an external module called <a href="https://github.com/mikeal/request" target="_blank" rel="external">‘request’</a>, instead of the native module http. It is much simpler to use to make http calls. See the code below:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> request = <span class="built_in">require</span>(<span class="string">'request'</span>)</div><div class="line"> </div><div class="line"><span class="keyword">var</span> url = <span class="string">'http://picasaweb.google.com'</span></div><div class="line">        + <span class="string">'/data/feed/api/user/102873175118305865375/'</span></div><div class="line">        + <span class="string">'albumid/5646665615382099025'</span></div><div class="line">        + <span class="string">'?alt=json'</span></div><div class="line"> </div><div class="line">request.get(url, <span class="function"><span class="keyword">function</span> <span class="params">(err, res, body)</span> </span>{</div><div class="line">    <span class="keyword">var</span> gplus = <span class="built_in">JSON</span>.parse(body)</div><div class="line">    <span class="keyword">var</span> len = gplus.feed.entry.length</div><div class="line">    ;(<span class="function"><span class="keyword">function</span> <span class="title">iterator</span><span class="params">(i)</span> </span>{</div><div class="line">      <span class="keyword">if</span> (i &gt;= len) <span class="keyword">return</span></div><div class="line">      <span class="built_in">console</span>.log(<span class="string">''</span> + (i+<span class="number">1</span>) + <span class="string">'. '</span></div><div class="line">                + gplus.feed.entry[i].content.src</div><div class="line">                + <span class="string">' - '</span> + gplus.feed.entry[i].summary[<span class="string">'$t'</span>])</div><div class="line">      iterator(i + <span class="number">1</span>)</div><div class="line">    })(<span class="number">0</span>)</div><div class="line">})</div></pre></td></tr></table></figure>
+
+<p>See, it is much less code. The request module is doing all the work for you.</p>
+<p>If you notice, I’m using iterator iife/recursion for looping. I will post another topic on that, as I need to do something else now. So, stay tuned! </p>
+
+    
+	</div>
+	<footer class="entry-footer">
+		<div class="entry-meta-footer">
+			<span class="category">
+				
+			</span>
+			<span class="tags">
+				
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gplus/">gplus</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li></ul>
+
+			</span>
+		</div>
+	</footer>
+	
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2014/08/07/extract-photos-from-google-plus/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">
+        
+          Extract photos from Google+
+        
+      </div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+    </div>
+    <div class="mb-search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="Search">
+    <input type="hidden" name="q" value="site:flipjs.io">
+  </form>
+</div>
+<footer id="footer">
+	<h1 class="footer-blog-title">
+		<a href="/">flipjs.io</a>
+	</h1>
+	<span class="copyright">
+		&copy; 2014 Felipe Apostol<br>
+		Modify from <a href="http://sanographix.github.io/tumblr/apollo/" target="_blank">Apollo</a> theme, designed by <a href="http://www.sanographix.net/" target="_blank">SANOGRAPHIX.NET</a><br>
+		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+	</span>
+</footer>
+    
+<script>
+  var disqus_shortname = 'flipjsio';
+  
+  var disqus_url = 'http://flipjs.io/2014/08/08/more-on-extracting-google-plus-photos/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//go.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+  </div>
+</body>
+</html>
