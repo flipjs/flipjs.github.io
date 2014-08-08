@@ -13,7 +13,7 @@ Unfortunately, you">
 <meta property="og:site_name" content="flipjs.io">
 <meta property="og:description" content="There is a new kid on the block that’s going to change how you write data-binding in JavaScript. It is called Object.observe(). As Addy Osmani was saying, “A revolution is coming.”
 Unfortunately, you">
-<meta property="og:image" content="observe.png">
+<meta property="og:image" content="http://flipjs.io/observe.png">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Playing with O.o()">
 <meta name="twitter:description" content="There is a new kid on the block that’s going to change how you write data-binding in JavaScript. It is called Object.observe(). As Addy Osmani was saying, “A revolution is coming.”
@@ -93,7 +93,7 @@ Unfortunately, you">
 
 <p>Its pretty simple, actually. You just pass the object to watch, and a listener (callback), which will be called when a change has occured. In the listener, you iterate through each change, in my example, using forEach. You can check what changes has been made by inspecting the type property. It could be a property has been added, updated or deleted.</p>
 <p>Here’s the result:</p>
-<p><img src="observe.png" alt="console"></p>
+<p><img src="http://flipjs.io/observe.png" alt="console"></p>
 <p>As you can see, the code block has finished already (‘End program text’), but the listener has stayed in memory, and async callback will be triggered when there is a change in the object being watched.</p>
 <p>I’m only scratching the surface here. The code above does nothing, but that’s how you start when you want to listen to an object mutations. There are lots of things you can do with Object.observe(). There is also Object.unobserve() actually, which unregisters your listener. Go, and play with O.o(). :)</p>
 <p>I need to go to sleep now. My head hurts so badly. I will touch more on this in future posts at some point.</p>

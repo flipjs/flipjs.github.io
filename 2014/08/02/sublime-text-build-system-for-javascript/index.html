@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://flipjs.io/2014/08/02/sublime-text-build-system-for-javascript/">
 <meta property="og:site_name" content="flipjs.io">
 <meta property="og:description" content="Today, my daughter kicked me out of my desk because she wants to use my macbook pro. She is contented with just using the iPad, but today, she wants to play an online game with her sister and friends.">
-<meta property="og:image" content="st-new-build-system.png">
+<meta property="og:image" content="http://flipjs.io/st-new-build-system.png">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Sublime Text Build System for JavaScript">
 <meta name="twitter:description" content="Today, my daughter kicked me out of my desk because she wants to use my macbook pro. She is contented with just using the iPad, but today, she wants to play an online game with her sister and friends.">
@@ -87,7 +87,7 @@
 <p>But alas, I didn’t have Sublime Text installed on my old macbook! I was a Textmate user before, so that was the text editor installed on it. Nothing to worry, just download Sublime Text (ST2 was used here), and install some packages.</p>
 <p>I downloaded NodeJS package too, and use it as build system for JavaScript. Please note that, prior to this, I already have Node.js installed. It can be downloaded from <a href="http://nodejs.org/" target="_blank" rel="external">nodejs.org</a>. </p>
 <p>Problem is, it displays nothing when I build from this package. I remember I had the same issues before, but for the life of me, I can’t remember how I solved it. Well, Google is your friend. :) I decided to just create a new build system, and leave the NodeJS package alone. From the Sublime Text menu, select Tools —&gt; Build System —&gt; New Build System:</p>
-<p><img src="st-new-build-system.png" alt="png image file"></p>
+<p><img src="http://flipjs.io/st-new-build-system.png" alt="png image file"></p>
 <p>Then, copy and paste this code:</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">{</div><div class="line">  "<span class="attribute">cmd</span>": <span class="value">[<span class="string">"node"</span>, <span class="string">"$file"</span>]</span>,</div><div class="line">  "<span class="attribute">selector</span>": <span class="value"><span class="string">"source.js"</span></span></div><div class="line">}</div></pre></td></tr></table></figure>
 

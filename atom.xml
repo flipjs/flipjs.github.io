@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Why isn't there ham in a hamburger?]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://flipjs.io/"/>
-  <updated>2014-08-08T01:40:39.353Z</updated>
+  <updated>2014-08-08T02:10:16.778Z</updated>
   <id>http://flipjs.io/</id>
   
   <author>
@@ -41,7 +41,7 @@
     <link href="http://flipjs.io/2014/08/03/playing-with-object-observe/"/>
     <id>http://flipjs.io/2014/08/03/playing-with-object-observe/</id>
     <published>2014-08-02T23:00:00.000Z</published>
-    <updated>2014-08-03T11:37:20.000Z</updated>
+    <updated>2014-08-08T02:09:09.000Z</updated>
     <content type="html"><![CDATA[<p>There is a new kid on the block that’s going to change how you write data-binding in JavaScript. It is called Object.observe(). As Addy Osmani was saying, “A revolution is coming.”</p>
 <p>Unfortunately, you cannot use it yet on most browsers, if not all. I tried Safari and Firefox, it didn’t work. Even node.js has not implemented it yet. But, you can already play with it using Google Chrome.</p>
 <p>Here’s the code I was playing with:</p>
@@ -49,7 +49,7 @@
 
 <p>Its pretty simple, actually. You just pass the object to watch, and a listener (callback), which will be called when a change has occured. In the listener, you iterate through each change, in my example, using forEach. You can check what changes has been made by inspecting the type property. It could be a property has been added, updated or deleted.</p>
 <p>Here’s the result:</p>
-<p><img src="observe.png" alt="console"></p>
+<p><img src="http://flipjs.io/observe.png" alt="console"></p>
 <p>As you can see, the code block has finished already (‘End program text’), but the listener has stayed in memory, and async callback will be triggered when there is a change in the object being watched.</p>
 <p>I’m only scratching the surface here. The code above does nothing, but that’s how you start when you want to listen to an object mutations. There are lots of things you can do with Object.observe(). There is also Object.unobserve() actually, which unregisters your listener. Go, and play with O.o(). :)</p>
 <p>I need to go to sleep now. My head hurts so badly. I will touch more on this in future posts at some point.</p>
@@ -65,12 +65,12 @@
     <link href="http://flipjs.io/2014/08/02/sublime-text-build-system-for-javascript/"/>
     <id>http://flipjs.io/2014/08/02/sublime-text-build-system-for-javascript/</id>
     <published>2014-08-01T23:00:00.000Z</published>
-    <updated>2014-08-03T00:02:55.000Z</updated>
+    <updated>2014-08-08T02:09:45.000Z</updated>
     <content type="html"><![CDATA[<p>Today, my daughter kicked me out of my desk because she wants to use my macbook pro. She is contented with just using the iPad, but today, she wants to play an online game with her sister and friends. She has her own computer, but it is broken for quite some time now. As for me, it’s time to use my old, trusty macbook again.</p>
 <p>But alas, I didn’t have Sublime Text installed on my old macbook! I was a Textmate user before, so that was the text editor installed on it. Nothing to worry, just download Sublime Text (ST2 was used here), and install some packages.</p>
 <p>I downloaded NodeJS package too, and use it as build system for JavaScript. Please note that, prior to this, I already have Node.js installed. It can be downloaded from <a href="http://nodejs.org/" target="_blank" rel="external">nodejs.org</a>. </p>
 <p>Problem is, it displays nothing when I build from this package. I remember I had the same issues before, but for the life of me, I can’t remember how I solved it. Well, Google is your friend. :) I decided to just create a new build system, and leave the NodeJS package alone. From the Sublime Text menu, select Tools —&gt; Build System —&gt; New Build System:</p>
-<p><img src="st-new-build-system.png" alt="png image file"></p>
+<p><img src="http://flipjs.io/st-new-build-system.png" alt="png image file"></p>
 <p>Then, copy and paste this code:</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">{</div><div class="line">  "<span class="attribute">cmd</span>": <span class="value">[<span class="string">"node"</span>, <span class="string">"$file"</span>]</span>,</div><div class="line">  "<span class="attribute">selector</span>": <span class="value"><span class="string">"source.js"</span></span></div><div class="line">}</div></pre></td></tr></table></figure>
 
