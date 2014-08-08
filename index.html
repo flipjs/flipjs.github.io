@@ -58,6 +58,61 @@
     <div id="main">
       
   
+    <article id="post-extract-photos-from-google-plus" class="post">
+	<footer class="entry-meta-header">
+		<span class="meta-elements date">
+			<a href="/2014/08/08/extract-photos-from-google-plus/" class="article-date">
+  <time datetime="2014-08-08T01:38:42.000Z" itemprop="datePublished">8 Aug 2014</time>
+</a>
+		</span>
+		<span class="meta-elements author">Felipe Apostol</span>
+		<div class="commentscount">
+			
+				<a href="http://flipjs.io/2014/08/08/extract-photos-from-google-plus/#disqus_thread" class="article-comment-link">Comments</a>
+			
+		</div>
+	</footer>
+	
+	<header class="entry-header">
+		
+  
+    <h1 itemprop="name" class="entry-title">
+      <a class="article-title" href="/2014/08/08/extract-photos-from-google-plus/">Extract photos from Google+</a>
+    </h1>
+  
+
+	</header>
+	<div class="entry-content">
+		
+    	<p>Here is how you can extract photos from Google+ photo albums. All you need to know is the userId and albumId of a Google+ user. The data being used here are my own photos, my street photography album. You have to have node.js installed to run the code below:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line">#!<span class="regexp">/usr/</span>bin/env node</div><div class="line"> </div><div class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>)</div><div class="line"> </div><div class="line"><span class="comment">// Google Plus Photos API</span></div><div class="line"><span class="comment">// Sample data from Felipe Apostol's Street Photography album</span></div><div class="line"><span class="comment">// userId is 102873175118305865375</span></div><div class="line"><span class="comment">// albumId is 5646665615382099025</span></div><div class="line"> </div><div class="line"><span class="keyword">var</span> options = {</div><div class="line">  host: <span class="string">'picasaweb.google.com'</span>,</div><div class="line">  path: <span class="string">'/data/feed/api/user/102873175118305865375/'</span></div><div class="line">        + <span class="string">'albumid/5646665615382099025?alt=json'</span></div><div class="line">}</div><div class="line"> </div><div class="line"><span class="keyword">var</span> req = http.request(options, <span class="function"><span class="keyword">function</span><span class="params">(res)</span> </span>{</div><div class="line"> </div><div class="line">  <span class="keyword">var</span> body = <span class="string">''</span></div><div class="line">  res.setEncoding(<span class="string">'utf8'</span>)</div><div class="line"></div><div class="line">  res.on(<span class="string">'readable'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{</div><div class="line">    <span class="keyword">var</span> chunk = <span class="keyword">this</span>.read() || <span class="string">''</span></div><div class="line">    body += chunk</div><div class="line">  })</div><div class="line"> </div><div class="line">  res.on(<span class="string">'end'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{</div><div class="line">    <span class="keyword">var</span> gplus = <span class="built_in">JSON</span>.parse(body)</div><div class="line">    <span class="keyword">var</span> len = gplus.feed.entry.length</div><div class="line">    ;(<span class="function"><span class="keyword">function</span> <span class="title">iterator</span><span class="params">(i)</span> </span>{</div><div class="line">      <span class="keyword">if</span> (i &gt;= len) <span class="keyword">return</span></div><div class="line">      ;<span class="comment">// we are interested with feed.entry property</span></div><div class="line">      ;<span class="comment">// log photo url + caption</span></div><div class="line">      <span class="built_in">console</span>.log(<span class="string">''</span> + (i+<span class="number">1</span>) + <span class="string">'. '</span></div><div class="line">                + gplus.feed.entry[i].content.src</div><div class="line">                + <span class="string">' - '</span> + gplus.feed.entry[i].summary[<span class="string">'$t'</span>])</div><div class="line">      iterator(i + <span class="number">1</span>)</div><div class="line">    })(<span class="number">0</span>)</div><div class="line">  })</div><div class="line"> </div><div class="line">  req.on(<span class="string">'error'</span>, <span class="function"><span class="keyword">function</span><span class="params">(e)</span> </span>{</div><div class="line">      <span class="built_in">console</span>.log(<span class="string">'error'</span> + e.message)</div><div class="line">  })</div><div class="line"> </div><div class="line">})</div><div class="line"> </div><div class="line">req.end()</div></pre></td></tr></table></figure>
+
+<p>The code will log out the photo url and description. You can try logging out the whole body and inspect to see all the information.</p>
+<p>Here are some of the photos in the album:<br><img src="http://lh6.ggpht.com/-qEohzb-j6o0/ToBNSlnTd-I/AAAAAAAADx8/YS00Zkk3QrA/P1100450.jpg" alt="The Eye"><br><img src="http://lh6.ggpht.com/-CIaO4eMsdEw/Tnxu5BetWHI/AAAAAAAADrU/AqWGN-u4jxA/P1050525.jpg" alt="Louvre"><br><img src="http://lh5.ggpht.com/-L1-WZpG41Ww/TmCtq1ThxSI/AAAAAAAADHQ/I4fgcJ6-FMY/nik_aug_11.jpg" alt="Stairs"></p>
+
+    
+	</div>
+	<footer class="entry-footer">
+		<div class="entry-meta-footer">
+			<span class="category">
+				
+			</span>
+			<span class="tags">
+				
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gplus/">gplus</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li></ul>
+
+			</span>
+		</div>
+	</footer>
+	
+</article>
+
+
+	<hr class="article-devider">
+
+
+
+  
     <article id="post-playing-with-object-observe" class="post">
 	<footer class="entry-meta-header">
 		<span class="meta-elements date">
@@ -236,72 +291,10 @@
 
 
   
-    <article id="post-using-object-literal-as-switch-statement" class="post">
-	<footer class="entry-meta-header">
-		<span class="meta-elements date">
-			<a href="/2014/07/18/using-object-literal-as-switch-statement/" class="article-date">
-  <time datetime="2014-07-17T23:00:00.000Z" itemprop="datePublished">18 Jul 2014</time>
-</a>
-		</span>
-		<span class="meta-elements author">Felipe Apostol</span>
-		<div class="commentscount">
-			
-				<a href="http://flipjs.io/2014/07/18/using-object-literal-as-switch-statement/#disqus_thread" class="article-comment-link">Comments</a>
-			
-		</div>
-	</footer>
-	
-	<header class="entry-header">
-		
   
-    <h1 itemprop="name" class="entry-title">
-      <a class="article-title" href="/2014/07/18/using-object-literal-as-switch-statement/">Using object literal as switch statement</a>
-    </h1>
-  
-
-	</header>
-	<div class="entry-content">
-		
-    	<p>I came across an article from Todd Motto about <a href="http://toddmotto.com/deprecating-the-switch-statement-for-object-literals/" target="_blank" rel="external">Replacing switch statements with Object literals</a>. It has enlightened me to force myself not to use switch statement again (unless it’s absolutely necessary). Todd Motto showed a few examples, but what interested me is the fallthrough implementation. Here is an example:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> classifyShape = <span class="function"><span class="keyword">function</span><span class="params">(shape)</span> </span>{</div><div class="line"></div><div class="line">  <span class="keyword">var</span> isTriangle = <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{}</div><div class="line">  <span class="keyword">var</span> isQuadrangle = <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{}</div><div class="line">  <span class="keyword">var</span> isPentagon = <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{}</div><div class="line"></div><div class="line">  <span class="keyword">var</span> shapes = {</div><div class="line">    <span class="string">'isosceles'</span>: isTriangle,</div><div class="line">    <span class="string">'rectangle'</span>: isQuadrangle,</div><div class="line">    <span class="string">'square'</span>: isQuadrangle</div><div class="line">  }</div><div class="line"></div><div class="line">  <span class="keyword">return</span> shapes[shape]()</div><div class="line">}</div></pre></td></tr></table></figure>
-
-<p>What if I wanted a default clause? Simple, add another clause, say ‘unknown: isUnknown’. But how would you call it if there is no case match? Good question! At first, I come up with this:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">return</span> shapes[shapes.hasOwnProperty(shape) ? shape : <span class="string">'unknown'</span>]()</div></pre></td></tr></table></figure>
-
-<p>But as Todd Motto pointed out, it involves extra function call, not to mention hasOwnProperty method has some issues. Then, I come up with this:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">return</span> shapes[shapes[shape] ? shape : <span class="string">'unknown'</span>]()</div></pre></td></tr></table></figure>
-
-<p>Just check the value, if its undefined, then call the default. Simpler. But why use ternary operator, when you can use short-circuit evaluation.</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">return</span> (shapes[shape] || shapes[<span class="string">'unknown'</span>])()</div></pre></td></tr></table></figure>
-
-<p>Much simpler!</p>
-<p>Here is the <a href="https://gist.github.com/flipjs/b969fb7b659de5d04e95" target="_blank" rel="external">final code</a>:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> classifyShape = <span class="function"><span class="keyword">function</span><span class="params">(shape)</span> </span>{</div><div class="line">  </div><div class="line">  <span class="keyword">var</span> isTriangle = <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'A triangle is a polygon with 3 sides.'</span>)</div><div class="line">  }</div><div class="line"></div><div class="line">  <span class="keyword">var</span> isQuadrangle = <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'A quadrangle is a polygon with 4 sides.'</span>)</div><div class="line">  }</div><div class="line"></div><div class="line">  <span class="keyword">var</span> isPentagon = <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'A pentagon is a polygon with 5 sides.'</span>)</div><div class="line">  }</div><div class="line"></div><div class="line">  <span class="keyword">var</span> isUnknown = <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'Unknown shape.'</span>)</div><div class="line">  }</div><div class="line">  </div><div class="line">  <span class="keyword">var</span> shapes = {</div><div class="line">    <span class="string">'isosceles'</span>: isTriangle,</div><div class="line">    <span class="string">'rectangle'</span>: isQuadrangle,</div><div class="line">    <span class="string">'square'</span>: isQuadrangle,</div><div class="line">    <span class="string">'unknown'</span>: isUnknown</div><div class="line">  }</div><div class="line">  </div><div class="line">  <span class="keyword">return</span> (shapes[shape] || shapes[<span class="string">'unknown'</span>])()</div><div class="line">  </div><div class="line">}</div><div class="line">  </div><div class="line">classifyShape(<span class="string">'square'</span>)</div><div class="line">classifyShape(<span class="string">'isosceles'</span>)</div><div class="line">classifyShape(<span class="string">'qwerty'</span>)</div></pre></td></tr></table></figure>
-
-
-    
-	</div>
-	<footer class="entry-footer">
-		<div class="entry-meta-footer">
-			<span class="category">
-				
-			</span>
-			<span class="tags">
-				
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
-
-			</span>
-		</div>
-	</footer>
-	
-</article>
-
-
-	<hr class="article-devider">
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
   
 
     </div>
