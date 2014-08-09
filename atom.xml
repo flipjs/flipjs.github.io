@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Why isn't there ham in a hamburger?]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://flipjs.io/"/>
-  <updated>2014-08-09T00:24:57.048Z</updated>
+  <updated>2014-08-09T01:34:59.154Z</updated>
   <id>http://flipjs.io/</id>
   
   <author>
@@ -19,11 +19,11 @@
     <link href="http://flipjs.io/2014/08/08/more-on-extracting-google-plus-photos/"/>
     <id>http://flipjs.io/2014/08/08/more-on-extracting-google-plus-photos/</id>
     <published>2014-08-08T10:34:08.000Z</published>
-    <updated>2014-08-09T00:21:47.000Z</updated>
+    <updated>2014-08-09T01:34:32.000Z</updated>
     <content type="html"><![CDATA[<p>This is a follow-up on my recent post called <a href="/2014/08/07/extract-photos-from-google-plus/">Extract photos from Google Plus</a>. A close friend of mine (and Angular Guru), <strong>Ronneil</strong> at <a href="http://c0debreaker.github.io/" target="_blank" rel="external">c0debreaker.github.io</a>, suggested that we can also use an external module called <a href="https://github.com/mikeal/request" target="_blank" rel="external"><strong>request</strong></a>.</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install request</div></pre></td></tr></table></figure>
 
-<p>This is much simpler to use to make http calls, than using the native module <a href="http://nodejs.org/api/http.html" target="_blank" rel="external"><strong>http</strong></a>. See the code below:</p>
+<p>This is much simpler to use to make http calls, than using the core module <a href="http://nodejs.org/api/http.html" target="_blank" rel="external"><strong>http</strong></a>. See the code below:</p>
 <script src="https://gist.github.com/6c24d36f0287e8e0ef7f.js"></script>
 
 <p>See, it is much less code. The request module is doing all the work for you.</p>
