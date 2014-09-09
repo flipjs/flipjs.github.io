@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Why isn't there ham in a hamburger?]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://flipjs.io/"/>
-  <updated>2014-08-13T22:18:55.704Z</updated>
+  <updated>2014-09-09T03:15:29.827Z</updated>
   <id>http://flipjs.io/</id>
   
   <author>
@@ -13,6 +13,34 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[AngularJS - Isolate scope properties in controller context via controllerAs]]></title>
+    <link href="http://flipjs.io/2014/09/09/isolate-scope-controller-as/"/>
+    <id>http://flipjs.io/2014/09/09/isolate-scope-controller-as/</id>
+    <published>2014-09-09T01:37:59.000Z</published>
+    <updated>2014-09-09T03:13:08.000Z</updated>
+    <content type="html"><![CDATA[<p>As discussed in <a href="https://github.com/angular/angular.js/pull/7645" target="_blank" rel="external">isolate scope properties in controller context via controllerAs</a>. Topic was started sometime in May, this feature is now live in 1.3.0!</p>
+<p>Since controllerAs is gaining a lot of momentum as of late, being mentioned a lot of times from many popular blogs, I’ve started to move away from using $scope in controller, whenever possible. Object.defineProperty() is also an excellent alternative to $scope.$watch.</p>
+<p>Anyways, back to <strong>bindToController</strong>, here is the description from official <a href="https://docs.angularjs.org/api/ng/service/$compile" target="_blank" rel="external">AngularJS</a> site:</p>
+<blockquote>
+<p>“When an isolate scope is used for a component (see above), and controllerAs is used, bindToController will allow a component to have its properties bound to the controller, rather than to scope. When the controller is instantiated, the initial values of the isolate scope bindings are already available.”</p>
+</blockquote>
+<p>There you go. When you set controllerAs and bindtoController, your isolate scope is now bound to controller, no need to depend on $scope. You can then reference your isolate scope, say in your template or linking function, using the controllerAs, for example, ‘ctrl.iscopeProp’. It is easier to describe it by showing you the code:</p>
+<script src="https://gist.github.com/3ddd5295a5843cf988bb.js"></script>
+
+<p>In my MusicPlayerCtrl.prototype, I can reference the isolate scope properties, as if they are properties of the controller. In the linking function as well, properties can be referenced through the 4th function parameter, which is the controller.</p>
+<p>Here is the view/index.html:</p>
+<script src="https://gist.github.com/93419df0b65f0b3ab968.js"></script>
+
+<p>Notice the symbol :: in expression, that is another neat feature in 1.3.x, it’s called one-time binding. You don’t need 2-way binding for all of your data in the view. Now we have this new feature, we can start implementing this for improved performance!</p>
+<p><img src="/images/bindtoctrl@2x.png" alt="png image file"></p>
+]]></content>
+    
+    
+      <category term="angular" scheme="http://flipjs.io/tags/angular/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[More on Extracting Google+ Photos]]></title>

@@ -58,6 +58,71 @@
     <div id="main">
       
   
+    <article id="post-isolate-scope-controller-as" class="post">
+	<footer class="entry-meta-header">
+		<span class="meta-elements date">
+			<a href="/2014/09/09/isolate-scope-controller-as/" class="article-date">
+  <time datetime="2014-09-09T01:37:59.000Z" itemprop="datePublished">9 Sep 2014</time>
+</a>
+		</span>
+		<span class="meta-elements author">Felipe Apostol</span>
+		<div class="commentscount">
+			
+				<a href="http://flipjs.io/2014/09/09/isolate-scope-controller-as/#disqus_thread" class="article-comment-link">Comments</a>
+			
+		</div>
+	</footer>
+	
+	<header class="entry-header">
+		
+  
+    <h1 itemprop="name" class="entry-title">
+      <a class="article-title" href="/2014/09/09/isolate-scope-controller-as/">AngularJS - Isolate scope properties in controller context via controllerAs</a>
+    </h1>
+  
+
+	</header>
+	<div class="entry-content">
+		
+    	<p>As discussed in <a href="https://github.com/angular/angular.js/pull/7645" target="_blank" rel="external">isolate scope properties in controller context via controllerAs</a>. Topic was started sometime in May, this feature is now live in 1.3.0!</p>
+<p>Since controllerAs is gaining a lot of momentum as of late, being mentioned a lot of times from many popular blogs, I’ve started to move away from using $scope in controller, whenever possible. Object.defineProperty() is also an excellent alternative to $scope.$watch.</p>
+<p>Anyways, back to <strong>bindToController</strong>, here is the description from official <a href="https://docs.angularjs.org/api/ng/service/$compile" target="_blank" rel="external">AngularJS</a> site:</p>
+<blockquote>
+<p>“When an isolate scope is used for a component (see above), and controllerAs is used, bindToController will allow a component to have its properties bound to the controller, rather than to scope. When the controller is instantiated, the initial values of the isolate scope bindings are already available.”</p>
+</blockquote>
+<p>There you go. When you set controllerAs and bindtoController, your isolate scope is now bound to controller, no need to depend on $scope. You can then reference your isolate scope, say in your template or linking function, using the controllerAs, for example, ‘ctrl.iscopeProp’. It is easier to describe it by showing you the code:</p>
+<script src="https://gist.github.com/3ddd5295a5843cf988bb.js"></script>
+
+<p>In my MusicPlayerCtrl.prototype, I can reference the isolate scope properties, as if they are properties of the controller. In the linking function as well, properties can be referenced through the 4th function parameter, which is the controller.</p>
+<p>Here is the view/index.html:</p>
+<script src="https://gist.github.com/93419df0b65f0b3ab968.js"></script>
+
+<p>Notice the symbol :: in expression, that is another neat feature in 1.3.x, it’s called one-time binding. You don’t need 2-way binding for all of your data in the view. Now we have this new feature, we can start implementing this for improved performance!</p>
+<p><img src="/images/bindtoctrl@2x.png" alt="png image file"></p>
+
+    
+	</div>
+	<footer class="entry-footer">
+		<div class="entry-meta-footer">
+			<span class="category">
+				
+			</span>
+			<span class="tags">
+				
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular/">angular</a></li></ul>
+
+			</span>
+		</div>
+	</footer>
+	
+</article>
+
+
+	<hr class="article-devider">
+
+
+
+  
     <article id="post-more-on-extracting-google-plus-photos" class="post">
 	<footer class="entry-meta-header">
 		<span class="meta-elements date">
@@ -219,69 +284,6 @@
 			<span class="tags">
 				
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
-
-			</span>
-		</div>
-	</footer>
-	
-</article>
-
-
-	<hr class="article-devider">
-
-
-
-  
-    <article id="post-sublime-text-build-system-for-javascript" class="post">
-	<footer class="entry-meta-header">
-		<span class="meta-elements date">
-			<a href="/2014/08/02/sublime-text-build-system-for-javascript/" class="article-date">
-  <time datetime="2014-08-01T23:00:00.000Z" itemprop="datePublished">2 Aug 2014</time>
-</a>
-		</span>
-		<span class="meta-elements author">Felipe Apostol</span>
-		<div class="commentscount">
-			
-				<a href="http://flipjs.io/2014/08/02/sublime-text-build-system-for-javascript/#disqus_thread" class="article-comment-link">Comments</a>
-			
-		</div>
-	</footer>
-	
-	<header class="entry-header">
-		
-  
-    <h1 itemprop="name" class="entry-title">
-      <a class="article-title" href="/2014/08/02/sublime-text-build-system-for-javascript/">Sublime Text Build System for JavaScript</a>
-    </h1>
-  
-
-	</header>
-	<div class="entry-content">
-		
-    	<p>Today, my daughter kicked me out of my desk because she wants to use my macbook pro. She is contented with just using the iPad, but today, she wants to play an online game with her sister and friends. She has her own computer, but it is broken for quite some time now. As for me, it’s time to use my old, trusty macbook again.</p>
-<p>But alas, I didn’t have Sublime Text installed on my old macbook! I was a Textmate user before, so that was the text editor installed on it. Nothing to worry, just download Sublime Text (ST2 was used here), and install some packages.</p>
-<p>I downloaded NodeJS package too, and use it as build system for JavaScript. Please note that, prior to this, I already have Node.js installed. It can be downloaded from <a href="http://nodejs.org/" target="_blank" rel="external">nodejs.org</a>. </p>
-<p>Problem is, it displays nothing when I build from this package. I remember I had the same issues before, but for the life of me, I can’t remember how I solved it. Well, Google is your friend. :) I decided to just create a new build system, and leave the NodeJS package alone. From the Sublime Text menu, select Tools —&gt; Build System —&gt; New Build System:</p>
-<p><img src="/images/st-new-build-system.png" alt="png image file"></p>
-<p>Then, copy and paste this code:</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">{</div><div class="line">  <span class="string">"cmd"</span>: [<span class="string">"node"</span>, <span class="string">"<span class="variable">$file</span>"</span>],</div><div class="line">  <span class="string">"selector"</span>: <span class="string">"source.js"</span></div><div class="line">}</div></pre></td></tr></table></figure>
-
-<p>And then, save it as, say “Node.sublime-build”. There is a problem though, when I execute Sublime Text from the dock or finder, it can’t find node. It could be the environment variable $PATH does not exist in finder shell or the path to node is not defined. Well, not to worry, it is an easy fix. Just prepend ‘node’ with ‘/usr/local/bin’ (or whereever it was installed) in sublime-build file:</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">{</div><div class="line">  <span class="string">"cmd"</span>: [<span class="string">"/usr/local/bin/node"</span>, <span class="string">"<span class="variable">$file</span>"</span>],</div><div class="line">  <span class="string">"selector"</span>: <span class="string">"source.js"</span></div><div class="line">}</div></pre></td></tr></table></figure>
-
-<p>And, that’s it!</p>
-<p>As for my daughter, I should fix her computer soon. Otherwise, she will always bug me, whenever she wants to play that game again. Ok, Evernote, add it on my todo list!</p>
-
-    
-	</div>
-	<footer class="entry-footer">
-		<div class="entry-meta-footer">
-			<span class="category">
-				
-			</span>
-			<span class="tags">
-				
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sublime/">sublime</a></li></ul>
 
 			</span>
 		</div>
